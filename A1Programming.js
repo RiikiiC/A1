@@ -1,6 +1,6 @@
 // 1. Create hospital data
 let hospital = {
-    name:"Oakville Public Hospital",
+    name:"Manhattan General Hospital",
     patients:[
         {
             id:"001",
@@ -70,3 +70,18 @@ function showPatients(patientsLi){
 }
 let data = showPatients(hospital);
 // console.log(data);
+
+
+// 3. Create another function named "getPatient"
+function getPatient(patientsLi){
+    let hospitalData = document.querySelector("#hospital");
+    
+    let randomId = document.createElement("p");
+    hospitalData.appendChild(randomId);
+
+    randomId.textContent = patientsLi[Math.floor(Math.random()*patientsLi.length)].id;
+    return randomId;
+}
+
+let patientId = getPatient(hospital.patients)
+console.log(patientId);
